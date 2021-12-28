@@ -1,5 +1,5 @@
 {
-    "name": "lpilp/guomi",
+    "name": "wzhih/guomi",
     "description": "国密sm2",
     "type": "library",
     "license": "MIT",
@@ -11,8 +11,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2",
-        "mdanter/ecc": "^1.0"
+        "php": ">=5.6",
+        "mdanter/ecc": "0.4.7"
     },
     "autoload": {
         "psr-4": {
