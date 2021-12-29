@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25389224104081d04661b5268219fba0",
+    "content-hash": "9526eec31ac4cdc6d599c36543d0e0ce",
     "packages": [
         {
             "name": "fgrosse/phpasn1",
-            "version": "v2.4.0",
+            "version": "v1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fgrosse/PHPASN1.git",
-                "reference": "eef488991d53e58e60c9554b09b1201ca5ba9296"
+                "reference": "4fe0afb91b4ce3ca08c63d9cf31cec1150828e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fgrosse/PHPASN1/zipball/eef488991d53e58e60c9554b09b1201ca5ba9296",
-                "reference": "eef488991d53e58e60c9554b09b1201ca5ba9296",
+                "url": "https://api.github.com/repos/fgrosse/PHPASN1/zipball/4fe0afb91b4ce3ca08c63d9cf31cec1150828e97",
+                "reference": "4fe0afb91b4ce3ca08c63d9cf31cec1150828e97",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -27,22 +27,20 @@
                 ]
             },
             "require": {
-                "php": "~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0"
+                "ext-gmp": "*",
+                "php": ">=5.6.0"
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "~2.0",
-                "phpunit/phpunit": "^6.3 || ^7.0 || ^8.0"
+                "php-coveralls/php-coveralls": "^1.0|^2.0",
+                "phpunit/phpunit": "~4.5"
             },
             "suggest": {
-                "ext-bcmath": "BCmath is the fallback extension for big integer calculations",
-                "ext-curl": "For loading OID information from the web if they have not bee defined statically",
-                "ext-gmp": "GMP is the preferred extension for big integer calculations",
-                "phpseclib/bcmath_compat": "BCmath polyfill for servers where neither GMP nor BCmath is available"
+                "php-curl": "For loading OID information from the web if they have not bee defined statically"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -83,22 +81,22 @@
             ],
             "support": {
                 "issues": "https://github.com/fgrosse/PHPASN1/issues",
-                "source": "https://github.com/fgrosse/PHPASN1/tree/v2.4.0"
+                "source": "https://github.com/fgrosse/PHPASN1/tree/1.5"
             },
-            "time": "2021-12-11T12:41:06+00:00"
+            "time": "2018-12-02T01:31:42+00:00"
         },
         {
             "name": "mdanter/ecc",
-            "version": "v1.0.0",
+            "version": "v0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpecc/phpecc.git",
-                "reference": "34e2eec096bf3dcda814e8f66dd91ae87a2db7cd"
+                "reference": "e465bf84a81898310a896e8cb26bd2f165ddc025"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpecc/phpecc/zipball/34e2eec096bf3dcda814e8f66dd91ae87a2db7cd",
-                "reference": "34e2eec096bf3dcda814e8f66dd91ae87a2db7cd",
+                "url": "https://api.github.com/repos/phpecc/phpecc/zipball/e465bf84a81898310a896e8cb26bd2f165ddc025",
+                "reference": "e465bf84a81898310a896e8cb26bd2f165ddc025",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -109,13 +107,14 @@
             },
             "require": {
                 "ext-gmp": "*",
-                "fgrosse/phpasn1": "^2.0",
-                "php": "^7.0||^8.0"
+                "fgrosse/phpasn1": "~1.5",
+                "paragonie/random_compat": "^1|^2",
+                "php": ">=5.6.0, <7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0||^8.0||^9.0",
-                "squizlabs/php_codesniffer": "^2.0",
-                "symfony/yaml": "^2.6|^3.0"
+                "phpunit/phpunit": "~4.1|~5.0",
+                "squizlabs/php_codesniffer": "~2",
+                "symfony/yaml": "~2.6|~3.0"
             },
             "type": "library",
             "autoload": {
@@ -138,11 +137,6 @@
                     "email": "thibaud@aztech.io",
                     "homepage": "http://aztech.io",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "Thomas Kerin",
-                    "email": "afk11@users.noreply.github.com",
-                    "role": "Maintainer"
                 }
             ],
             "description": "PHP Elliptic Curve Cryptography library",
@@ -157,17 +151,75 @@
                 "nistp192",
                 "nistp224",
                 "nistp256",
-                "nistp384",
                 "nistp521",
                 "phpecc",
-                "secp256k1",
-                "secp256r1"
+                "secp256k1"
             ],
             "support": {
                 "issues": "https://github.com/phpecc/phpecc/issues",
-                "source": "https://github.com/phpecc/phpecc/tree/v1.0.0"
+                "source": "https://github.com/phpecc/phpecc/tree/0.4"
             },
-            "time": "2021-01-16T19:42:14+00:00"
+            "time": "2018-12-03T22:19:39+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "0f1f60250fccffeaf5dda91eea1c018aed1adc2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/0f1f60250fccffeaf5dda91eea1c018aed1adc2a",
+                "reference": "0f1f60250fccffeaf5dda91eea1c018aed1adc2a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "polyfill",
+                "pseudorandom",
+                "random"
+            ],
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https://github.com/paragonie/random_compat/issues",
+                "source": "https://github.com/paragonie/random_compat"
+            },
+            "time": "2021-04-17T09:33:01+00:00"
         }
     ],
     "packages-dev": [],
@@ -177,7 +229,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=5.6"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
