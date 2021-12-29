@@ -1,6 +1,6 @@
 <?php
 
-declare( strict_types = 1 );
+// declare( strict_types = 1 );
 
 // namespace Mdanter\Ecc\Crypto\Signature;
 namespace Rtgm\ecc;
@@ -38,7 +38,7 @@ class Sm2Signer {
     * @return SignatureInterface
     */
 
-    public function sign( PrivateKeyInterface $key, \GMP $truncatedHash, \GMP $randomK ): SignatureInterface {
+    public function sign( PrivateKeyInterface $key, \GMP $truncatedHash, \GMP $randomK ) {
         $math = $this->adapter;
         $generator = $key->getPoint();
         // var_dump($generator);die();
@@ -93,7 +93,7 @@ class Sm2Signer {
     * @return bool
     */
 
-    public function verify( PublicKeyInterface $key, SignatureInterface $signature, \GMP $hash ): bool {
+    public function verify( PublicKeyInterface $key, SignatureInterface $signature, \GMP $hash ) {
 
         $generator = $key->getGenerator();
         // var_dump($generator);die();

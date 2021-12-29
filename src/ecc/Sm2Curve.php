@@ -31,7 +31,7 @@ class Sm2Curve
      *
      * @return NamedCurveFp
      */
-    public function curveSm2(): NamedCurveFp
+    public function curveSm2()
     {
         $p = gmp_init('0xFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF', 16);
         $b = gmp_init('0x28E9FA9E9D9F5E344D5A9E4BCF6509A7F39789F515AB8F92DDBCBD414D940E93', 16);
@@ -47,7 +47,7 @@ class Sm2Curve
      * @param  RandomNumberGeneratorInterface $randomGenerator
      * @return GeneratorPoint
      */
-    public function generatorSm2(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint
+    public function generatorSm2(RandomNumberGeneratorInterface $randomGenerator = null)
     {
         $curve = $this->curveSm2();
         $order = gmp_init('0xFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFF7203DF6B21C6052B53BBF40939D54123', 16);

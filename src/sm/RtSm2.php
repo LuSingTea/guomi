@@ -196,8 +196,8 @@ class RtSm2 {
 
         $obPoint = $key->getPublicKey()->getPoint();
 
-        $pubKeyX = $adapter->decHex( $obPoint->getX() );
-        $pubKeyY = $adapter->decHex( $obPoint->getY() );
+        $pubKeyX = $adapter->decHex((string)  $obPoint->getX() );
+        $pubKeyY = $adapter->decHex((string)  $obPoint->getY() );
 
         $hash = $this->_doS3Hash( $document, $pubKeyX, $pubKeyY, $generator, $userId );
 
@@ -334,7 +334,7 @@ class RtSm2 {
         }
         return implode("",$res);
     }
-    private function decHex($dec): string
+    private function decHex($dec)
     {
         if(gettype($dec)=='string'){
             $dec = gmp_init($dec, 10);

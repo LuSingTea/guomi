@@ -4,7 +4,7 @@ namespace Rtgm\smecc\SM3;
 
 class GeneralDigest 
 {
-    private const  BYTE_LENGTH = 64;
+    const  BYTE_LENGTH = 64;
 
     private $xBuf=array();
     private $xBufOff;
@@ -103,7 +103,7 @@ class GeneralDigest
         $this->xBuf[2]=0; $this->xBuf[3]=0;
     }
 
-    public function GetByteLength():int
+    public function GetByteLength()
     {
         return $this::BYTE_LENGTH;
     }

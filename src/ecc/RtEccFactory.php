@@ -20,7 +20,7 @@ class RtEccFactory extends EccFactory{
      * @throws \RuntimeException
      * @return GmpMathInterface
      */
-    public static function getAdapter(bool $debug = false): GmpMathInterface
+    public static function getAdapter($debug = false)
     {
 
         $adapter = MathAdapterFactory::getAdapter($debug);
@@ -33,7 +33,7 @@ class RtEccFactory extends EccFactory{
      * @param  GmpMathInterface $adapter [optional] Defaults to the return value of EccFactory::getAdapter().
      * @return Sm2Curve
      */
-    public static function getSmCurves(GmpMathInterface $adapter = null): Sm2Curve
+    public static function getSmCurves(GmpMathInterface $adapter = null)
     {
         $adapter = $adapter ?: self::getAdapter();
         // var_dump($adapter);

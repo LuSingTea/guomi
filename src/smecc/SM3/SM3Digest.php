@@ -8,9 +8,9 @@ class SM3Digest extends  GeneralDigest
 {
     public static $AlgorithmName="SM3";
 
-    private const DIGEST_LENGTH = 32;
+    const DIGEST_LENGTH = 32;
 
-    public function  GetDigestSize():int
+    public function  GetDigestSize()
     {
         return $this::DIGEST_LENGTH;
     }
@@ -186,7 +186,7 @@ class SM3Digest extends  GeneralDigest
         $bs[++$off] = ($n)  & 0xff ;
     }
 
-    public function DoFinal(&$out_Renamed, $outOff):int
+    public function DoFinal(&$out_Renamed, $outOff)
     {
         $this->Finish();
         
@@ -289,7 +289,7 @@ class SM3Digest extends  GeneralDigest
       
 	}
     
-    private  function FFj($X, $Y, $Z, $j) :int
+    private  function FFj($X, $Y, $Z, $j)
     {
 		if($j>=0 && $j<=15) {
 			return $this->FF_00_15($X, $Y, $Z);
@@ -297,7 +297,7 @@ class SM3Digest extends  GeneralDigest
 			return $this->FF_16_63($X, $Y, $Z);
 		}
 	}
-    private function GGj($X, $Y, $Z, $j) :int
+    private function GGj($X, $Y, $Z, $j)
     {
 		if($j>=0 && $j<=15) {
 			return $this->GG_00_15($X, $Y, $Z);
@@ -306,7 +306,7 @@ class SM3Digest extends  GeneralDigest
 		}
 	}
 
-    private function ROTATE($X, $n):int
+    private function ROTATE($X, $n)
     {
        // $r=($this->RightRotateLong($X, (32 - $n)));
         //$r1=$this->LeftRotateLong($X , $n);
@@ -314,34 +314,34 @@ class SM3Digest extends  GeneralDigest
         return $this->LeftRotateLong($X , $n) | ($this->RightRotateLong($X, (32 - $n)));
     }
     
-    private function P0($X):int
+    private function P0($X)
     {
         $a=$this->ROTATE(($X), 9);
         $b= $this->ROTATE(($X), 17);
         return (($X) ^ $this->ROTATE(($X), 9) ^ $this->ROTATE(($X), 17));
     }
     
-    private function P1($X):int
+    private function P1($X)
     {
         return (($X) ^ $this->ROTATE(($X), 15) ^ $this->ROTATE(($X), 23));
     }
     
-    private static function FF_00_15($X, $Y, $Z):int
+    private static function FF_00_15($X, $Y, $Z)
     {
         return ($X ^ $Y ^ $Z);
     }
     
-    private static function FF_16_63($X, $Y, $Z):int
+    private static function FF_16_63($X, $Y, $Z)
     {
         return (($X & $Y) | ($X & $Z) | ($Y & $Z));
     }
     
-    private static function GG_00_15($X, $Y, $Z):int
+    private static function GG_00_15($X, $Y, $Z)
     {
         return ($X ^ $Y ^ $Z);
     }
     
-    private static function GG_16_63($X, $Y, $Z):int
+    private static function GG_16_63($X, $Y, $Z)
     {
         return (($X & $Y) | (~ $X & $Z));
     }

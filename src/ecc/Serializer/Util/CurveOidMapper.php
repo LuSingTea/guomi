@@ -2,7 +2,7 @@
 /**
  * 覆盖ecc里的oid与椭圆的对照数组，添加sm2
  */
-declare(strict_types=1);
+// declare(strict_types=1);
 
 namespace Mdanter\Ecc\Serializer\Util;
 
@@ -77,7 +77,7 @@ class CurveOidMapper
     /**
      * @return array
      */
-    public static function getNames(): array
+    public static function getNames()
     {
         return array_keys(self::$oidMap);
     }
@@ -86,7 +86,7 @@ class CurveOidMapper
      * @param CurveFpInterface $curve
      * @return int
      */
-    public static function getByteSize(CurveFpInterface $curve): int
+    public static function getByteSize(CurveFpInterface $curve)
     {
         if ($curve instanceof NamedCurveFp && array_key_exists($curve->getName(), self::$sizeMap)) {
             return self::$sizeMap[$curve->getName()];
@@ -99,7 +99,7 @@ class CurveOidMapper
      * @param NamedCurveFp $curve
      * @return ObjectIdentifier
      */
-    public static function getCurveOid(NamedCurveFp $curve): ObjectIdentifier
+    public static function getCurveOid(NamedCurveFp $curve)
     {
         if (array_key_exists($curve->getName(), self::$oidMap)) {
             $oidString = self::$oidMap[$curve->getName()];
@@ -114,7 +114,7 @@ class CurveOidMapper
      * @param ObjectIdentifier $oid
      * @return NamedCurveFp
      */
-    public static function getCurveFromOid(ObjectIdentifier $oid): NamedCurveFp
+    public static function getCurveFromOid(ObjectIdentifier $oid)
     {
         $oidString = $oid->getContent();
         $invertedMap = array_flip(self::$oidMap);
@@ -132,7 +132,7 @@ class CurveOidMapper
      * @param ObjectIdentifier $oid
      * @return GeneratorPoint
      */
-    public static function getGeneratorFromOid(ObjectIdentifier $oid): GeneratorPoint
+    public static function getGeneratorFromOid(ObjectIdentifier $oid)
     {
         $oidString = $oid->getContent();
         $invertedMap = array_flip(self::$oidMap);

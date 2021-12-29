@@ -2,7 +2,7 @@
 /**
  * 覆盖ecc里的椭圆类，添加sm2
  */
-declare(strict_types=1);
+// declare(strict_types=1);
 
 namespace Mdanter\Ecc\Curves;
 
@@ -19,7 +19,7 @@ class CurveFactory
      * @param string $name
      * @return NamedCurveFp
      */
-    public static function getCurveByName(string $name): NamedCurveFp
+    public static function getCurveByName(string $name)
     {
         $adapter = MathAdapterFactory::getAdapter();
         if($name == Sm2Curve::NAME_PSM2){
@@ -60,7 +60,7 @@ class CurveFactory
      * @param string $name
      * @return GeneratorPoint
      */
-    public static function getGeneratorByName(string $name): GeneratorPoint
+    public static function getGeneratorByName($name)
     {
         $adapter = MathAdapterFactory::getAdapter();
         if($name == Sm2Curve::NAME_PSM2){
@@ -101,7 +101,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return NistCurve
      */
-    private static function getNistFactory(GmpMathInterface $math): NistCurve
+    private static function getNistFactory(GmpMathInterface $math)
     {
         return new NistCurve($math);
     }
@@ -110,7 +110,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return SecgCurve
      */
-    private static function getSecpFactory(GmpMathInterface $math): SecgCurve
+    private static function getSecpFactory(GmpMathInterface $math)
     {
         return new SecgCurve($math);
     }
@@ -118,7 +118,7 @@ class CurveFactory
      * @param GmpMathInterface $math
      * @return Sm2
      */
-    private static function getSm2Factory(GmpMathInterface $math): Sm2Curve
+    private static function getSm2Factory(GmpMathInterface $math)
     {
         return new Sm2Curve($math);
     }
