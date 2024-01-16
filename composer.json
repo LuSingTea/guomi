@@ -1,31 +1,26 @@
 {
-    "name": "wzhih/guomi",
-    "description": "国密sm2",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "recent",
-            "email": "lpilp@126.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">=5.6",
-        "mdanter/ecc": "0.4.7"
+  "name": "cib/guomi",
+  "description": "国密sm2",
+  "version": "1.0.4",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.6",
+    "mdanter/ecc": "0.4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rtgm\\": "src"
     },
-    "autoload": {
-        "psr-4": {
-            "Rtgm\\": "src"
-        },
-        "files": ["src/overwrite.php"]
-        
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
+    "files": [
+      "src/overwrite.php"
+    ]
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
     }
-    
+  }
 }
